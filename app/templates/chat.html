@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Room - {{room_name}}{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <div class="header-content">
+            <div class="col-md-8"><h1>Chat of {{room_name}} room.</h1></div>
+            <div class="col-md-4"><a class="btn btn-primary pull-right" href="{{url_for('main.home')}}">Back home.</a></div>
+        </div>
+    </div>
+    
+    
+        <div class="form-group">
+            <textarea class="form-control" id="chat-history" rows="8" readonly>{% if messages[0] %}{% for message in messages %}{{message.get_timestamp()}} {{message.author.username}}: {{message.text}} &#10;{% endfor %}{% endif %}</textarea> <br>
+            <input type="text" class="form-control" id="user-message" placeholder="Type your message here..."> <br>
+            <button class="btn btn-primary" id="send-message">Send</button>
+        </div>
+    
+{% endblock %}
+
+{% block scripts %}
+    {{super()}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.min.js"></script>
+    <script src="{{url_for('static', filename='js/socketio.js')}}"></script>
+    <script>const username = `{{username}}`</script>
+{% endblock %}

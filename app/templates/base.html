@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block head %}
+    {{super()}}
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/chat.css')}}">
+{% endblock %}
+
+
+{% block content %}
+    {{super()}}
+    <div class="container">
+        {% block page_content %}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{{super()}}
+{{moment.include_moment()}}
+{{moment.lang('EN')}}
+{% endblock %}

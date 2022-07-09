@@ -1,0 +1,7 @@
+div.header-content {
+    display: flex;
+}
+
+div.header-content a {
+    margin-top: 20px;
+}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}SocketIO Home{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>SocketIO Home.</h1>
+    </div>
+    {{wtf.quick_form(form, button_map={'submit': 'primary'})}}
+
+    {% if rooms[0] %}
+    <h1>Rooms available:</h1>
+        {% for room in rooms %}
+            <h2>{{room.room_name}}</h2>
+        {% endfor %}
+    {% endif %}
+{% endblock %}
