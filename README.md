@@ -7,13 +7,13 @@ Chat build with python and flask-socketio.
 
 #### Create and activate virtual environment:
 ```sh
-	python -m venv [YOUR_ENV_NAME]
-	venv/Scripts/activate
+    python -m venv [YOUR_ENV_NAME]
+    venv/Scripts/activate
 ```
 
 #### Install requirements.txt file:
 ```sh
-	pip install -r requirements.txt
+    pip install -r requirements.txt
 ```
 
 #### Run this script to create database tables:
